@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакти — обговоримо вашу задачу чесно | KANRUN</title>
+  <meta name="description" content="Зв'яжіться з KANRUN: безкоштовний аудит, чесна оцінка перспектив проєкту, відповідь протягом одного робочого дня." />
+  <link rel="canonical" href="https://kanrun.com.ua/contacts.html" />
+  <meta name="theme-color" content="#FFD1BA" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="KANRUN" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta property="og:title" content="Контакти — KANRUN" />
+  <meta property="og:description" content="Безкоштовний аудит, чесна оцінка перспектив проєкту, відповідь протягом одного робочого дня." />
+  <meta property="og:url" content="https://kanrun.com.ua/contacts.html" />
+  <meta property="og:image" content="https://kanrun.com.ua/assets/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-form { display: grid; gap: 16px; max-width: 560px; }
+    .contact-form label { font-size: 14px; font-weight: 600; color: var(--black); display: block; margin-bottom: 6px; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font-family: var(--font);
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+    }
+    .contact-form input:focus-visible,
+    .contact-form textarea:focus-visible { outline: 4px solid var(--brand-medium); outline-offset: 2px; }
+    .contact-form textarea { min-height: 140px; resize: vertical; }
+    .form-status { font-size: 14px; font-weight: 600; color: var(--success); display: none; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">K</span>
+        KANRUN <em>маркетинг</em>
+      </a>
+      <nav class="nav-links">
+        <a href="seo.html">SEO</a>
+        <a href="ppc.html">PPC</a>
+        <a href="smm.html" class="hide-m">SMM</a>
+        <a href="development.html" class="hide-m">Розробка</a>
+        <a href="company.html" class="hide-m">Компанія</a>
+        <a href="contacts.html" class="btn btn-dark active">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero grid-pattern">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Хлібні крихти">
+          <a href="index.html">Головна</a> / Контакти
+        </nav>
+        <span class="kicker">Контакти</span>
+        <h1>Давайте обговоримо<br />вашу задачу <span class="hl">чесно</span></h1>
+        <p class="lead">
+          Опишіть ситуацію кількома реченнями — подивимося дані, скажемо, чи зможемо допомогти,
+          і запропонуємо перший крок. Якщо допомогти не зможемо, теж скажемо.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap two-col">
+        <div>
+          <span class="kicker">Форма</span>
+          <h2>Розкажіть про проєкт</h2>
+          <form class="contact-form mt-24" id="contact-form">
+            <div>
+              <label for="f-name">Ваше ім'я</label>
+              <input id="f-name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div>
+              <label for="f-contact">Email або телефон</label>
+              <input id="f-contact" name="contact" type="text" required autocomplete="email" />
+            </div>
+            <div>
+              <label for="f-msg">Задача</label>
+              <textarea id="f-msg" name="message" required placeholder="Наприклад: інтернет-магазин меблів, PPC дає заявки по 900 грн, хочемо вдвічі дешевше…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Надіслати запит</button>
+            <p class="form-status" id="form-status">Дякуємо! Ваш лист відкрито в поштовому клієнті — натисніть «Надіслати» там.</p>
+          </form>
+        </div>
+        <div>
+          <span class="kicker">Що далі</span>
+          <h2>Як виглядає перший крок</h2>
+          <ul class="check-list">
+            <li>Відповідаємо протягом одного робочого дня</li>
+            <li>Безкоштовний аудит: дивимося дані, а не вгадуємо</li>
+            <li>План із цифрами: бюджет, строки, метрика успіху</li>
+            <li>Чесна відмова, якщо проєкт нам не під силу або не окупиться</li>
+          </ul>
+          <div class="note-strip mt-24">
+            <b>Пошта для прямого зв'язку:</b><br />
+            <a href="mailto:hello@kanrun.com.ua">hello@kanrun.com.ua</a>
+          </div>
+          <div class="note-strip mt-16">
+            <b>Де ми:</b> Україна · Київ. Працюємо з бізнесом по всій Україні та в ЄС.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">KANRUN <span>маркетинг</span></div>
+          <p class="foot-note">Агентство AI-операційного маркетингу. Без обіцянок «топ-1 за тиждень» — з 2009 року.</p>
+        </div>
+        <div>
+          <h4>Послуги</h4>
+          <ul class="foot-links">
+            <li><a href="seo.html">SEO</a></li>
+            <li><a href="ppc.html">PPC-реклама</a></li>
+            <li><a href="smm.html">SMM</a></li>
+            <li><a href="development.html">Веб-розробка</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Компанія</h4>
+          <ul class="foot-links">
+            <li><a href="company.html">Про нас</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+            <li><a href="https://kanrun.ua/" rel="noopener">AI-продукти ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакти</h4>
+          <ul class="foot-links">
+            <li><a href="mailto:hello@kanrun.com.ua">hello@kanrun.com.ua</a></li>
+            <li><a href="contacts.html">Форма зв'язку</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2009–2026 KANRUN. Усі права захищено.</span>
+        <span>Зроблено власними руками та AI-продуктами.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Форма відкриває поштовий клієнт із заповненим листом (без бекенду)
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('f-name').value.trim();
+      var contact = document.getElementById('f-contact').value.trim();
+      var msg = document.getElementById('f-msg').value.trim();
+      var subject = encodeURIComponent('Запит із сайту kanrun.com.ua — ' + name);
+      var body = encodeURIComponent('Ім\'я: ' + name + '\nКонтакт: ' + contact + '\n\nЗадача:\n' + msg);
+      window.location.href = 'mailto:hello@kanrun.com.ua?subject=' + subject + '&body=' + body;
+      document.getElementById('form-status').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
