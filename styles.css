@@ -82,8 +82,24 @@ p.lead {
 p { max-width: 65ch; }
 p + p { margin-top: 16px; }
 
-a { color: var(--fg-brand); font-weight: 600; }
-a:hover { color: var(--fg-brand-strong); }
+a {
+  color: var(--fg-brand-strong);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+a:hover { color: var(--fg-brand-strong); text-decoration: none; }
+
+/* Browser surfaces carry the design too */
+::selection { background: var(--brand); color: var(--black); }
+a:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--fg-brand);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
 
 .wrap {
   max-width: var(--container);
@@ -103,22 +119,7 @@ section.grid-pattern {
   background-size: 32px 32px;
 }
 .sec-head { margin-bottom: 48px; }
-.sec-head .kicker { margin-bottom: 16px; }
 .sec-head p { margin-top: 16px; }
-
-.kicker {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  color: var(--black);
-  background: var(--brand);
-  border: var(--border);
-  border-radius: var(--radius-sm);
-  padding: 4px 12px;
-  margin-bottom: 16px;
-}
 
 /* Retro headline highlight */
 .hl {
@@ -209,6 +210,15 @@ section.grid-pattern {
 .nav-links a:hover { border-color: var(--black); background: var(--gray-100); color: var(--black); }
 .nav-links a.active { background: var(--brand); border-color: var(--black); }
 .nav-links a.btn { padding: 8px 16px; }
+/* Кнопки в шапці: нейтралізуємо .nav-links a / .nav-links a:hover, щоб варіанти кнопок зберігали свої кольори */
+.nav-links a.btn-dark { background: var(--black); color: var(--white); }
+.nav-links a.btn-dark:hover { background: var(--ink); color: var(--white); }
+.nav-links a.btn-brand { background: var(--brand); color: var(--black); }
+.nav-links a.btn-brand:hover { background: var(--brand-strong); color: var(--black); }
+.nav-links a.btn-ghost { background: transparent; color: var(--black); }
+.nav-links a.btn-ghost:hover { background: var(--gray-100); color: var(--black); }
+.nav-links a.btn-white { background: var(--white); color: var(--black); }
+.nav-links a.btn-white:hover { background: var(--gray-100); color: var(--black); }
 @media (max-width: 860px) { .hide-m { display: none; } }
 
 /* ============ Hero ============ */
@@ -237,17 +247,7 @@ section.grid-pattern {
 .h-stat b { display: block; font-size: 28px; font-weight: 700; color: var(--black); line-height: 1.1; }
 .h-stat span { font-size: 13px; line-height: 1.5; color: var(--body); }
 
-.hero-chips { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
-.chip {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  padding: 6px 14px;
-  background: var(--white);
-  border: var(--border);
-  border-radius: 9999px;
-}
+
 
 /* ============ Cards ============ */
 .cards {
@@ -449,11 +449,24 @@ footer .foot-bottom {
   font-size: 15px;
 }
 .note-strip b { color: var(--black); }
-.reveal { opacity: 0; transform: translateY(16px); }
+
+/* Один авторський момент на сторінку: вхід головного героя.
+   За замовчуванням контент видимий; анімація — лише прогресивне покращення. */
 @media (prefers-reduced-motion: no-preference) {
-  .reveal { animation: rise 0.5s ease forwards; }
-  .reveal.d1 { animation-delay: 0.08s; }
-  .reveal.d2 { animation-delay: 0.16s; }
-  .reveal.d3 { animation-delay: 0.24s; }
+  .hero .hero-inner > * {
+    animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  .hero .hero-inner > *:nth-child(2) { animation-delay: 0.06s; }
+  .hero .hero-inner > *:nth-child(3) { animation-delay: 0.12s; }
+  .hero .hero-inner > *:nth-child(4) { animation-delay: 0.18s; }
+  .hero .hero-inner > *:nth-child(5) { animation-delay: 0.24s; }
+  .hero .hero-inner > *:nth-child(6) { animation-delay: 0.3s; }
 }
-@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Stat heading: number chip + label in one heading line */
+.stat-h { font-size: 18px; letter-spacing: 0; line-height: 1.3; margin-bottom: 12px; }
+.stat-h .num { margin-bottom: 0; margin-right: 8px; vertical-align: -8px; }
